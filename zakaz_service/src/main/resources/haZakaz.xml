@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ua.nure.entity">
+
+    <class name="ua.nure.sql.Zakaz" table="zakaz">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="Address1"/>
+        <property name="Address2"/>
+        <property name="category"/>
+        <property name="createDateTime"/>
+        <property name="assignDateTime"/>
+        <property name="autoId"/>
+        <property name="orderStatus"/>
+        <property name="userId"/>
+    </class>
+</hibernate-mapping>

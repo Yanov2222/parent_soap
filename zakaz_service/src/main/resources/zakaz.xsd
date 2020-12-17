@@ -1,0 +1,168 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getZakazRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getZakazResponse">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element name="zakaz" type="tns:zakaz"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postCreateZakazRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+                <xs:element name="category" type="xs:string"/>
+                <xs:element name="address1" type="xs:string"/>
+                <xs:element name="address2" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postCreateZakazResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postDeleteZakazRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+                <xs:element name="zakaz" type="tns:zakaz"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postDeleteZakazResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="postUpdateZakazRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+                <xs:element name="zakaz" type="tns:zakaz"/>
+                <xs:element name="status" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postUpdateZakazResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postAssignZakazRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+                <xs:element name="zakaz" type="tns:zakaz"/>
+                <xs:element name="auto" type="tns:auto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postAssignZakazResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getReadSnapshotRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getReadSnapshotResponse">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element name="zakaz" type="tns:zakaz_view"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="login" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="telephone" type="xs:string"/>
+            <xs:element name="fullname" type="xs:string"/>
+            <xs:element name="role" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="auto">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="brand" type="xs:string"/>
+            <xs:element name="model" type="xs:string"/>
+            <xs:element name="seats" type="xs:int"/>
+            <xs:element name="category" type="xs:string"/>
+            <xs:element name="color" type="xs:string"/>
+            <xs:element name="sign_number" type="xs:string"/>
+            <xs:element name="driver_id" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="zakaz">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="address1" type="xs:string"/>
+            <xs:element name="address2" type="xs:string"/>
+            <xs:element name="category" type="xs:string"/>
+            <xs:element name="create_date_time" type="xs:dateTime"/>
+            <xs:element name="assign_date_time" type="xs:dateTime"/>
+            <xs:element name="auto_id" type="xs:int"/>
+            <xs:element name="order_status" type="xs:string"/>
+            <xs:element name="user_id" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="zakaz_view">
+        <xs:sequence>
+            <xs:element name="zakaz_id" type="xs:int"/>
+            <xs:element name="user_id" type="xs:int"/>
+            <xs:element name="user_fullname" type="xs:string"/>
+            <xs:element name="telephone" type="xs:string"/>
+            <xs:element name="create_date_time" type="xs:dateTime"/>
+            <xs:element name="Address1" type="xs:string"/>
+            <xs:element name="Address2" type="xs:string"/>
+            <xs:element name="category" type="xs:string"/>
+            <xs:element name="assign_date_time" type="xs:dateTime"/>
+            <xs:element name="auto_id" type="xs:int"/>
+            <xs:element name="order_status" type="xs:string"/>
+            <xs:element name="sign_number" type="xs:string"/>
+            <xs:element name="driver_fullname" type="xs:string"/>
+            <xs:element name="auto_name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>

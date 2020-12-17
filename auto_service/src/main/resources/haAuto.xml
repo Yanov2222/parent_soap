@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ua.nure.entity">
+
+    <class name="Auto" table="auto">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="model"/>
+        <property name="brand"/>
+        <property name="seats"/>
+        <property name="category"/>
+        <property name="color"/>
+        <property name="signNumber"/>
+        <property name="driverId"/>
+    </class>
+</hibernate-mapping>

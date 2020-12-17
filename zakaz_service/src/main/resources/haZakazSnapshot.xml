@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ua.nure.entity">
+
+    <class name="ua.nure.sql.ZakazView" table="zakaz_snapshot" mutable="false">
+        <id name="zakazId">
+            <generator class="native"/>
+        </id>
+        <property name="userId"/>
+        <property name="userFullname"/>
+        <property name="telephone"/>
+        <property name="createDateTime"/>
+        <property name="Address1"/>
+        <property name="Address2"/>
+        <property name="category"/>
+        <property name="assignDateTime"/>
+        <property name="autoId"/>
+        <property name="orderStatus"/>
+        <property name="signNumber"/>
+        <property name="driverFullname"/>
+        <property name="autoName"/>
+    </class>
+</hibernate-mapping>
